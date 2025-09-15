@@ -1,0 +1,28 @@
+D:\Coding\C#\Lab_01\bin\Debug\net9.0\Lab_01.exe
+D:\Coding\C#\Lab_01\bin\Debug\net9.0\Lab_01.deps.json
+D:\Coding\C#\Lab_01\bin\Debug\net9.0\Lab_01.runtimeconfig.json
+D:\Coding\C#\Lab_01\bin\Debug\net9.0\Lab_01.dll
+D:\Coding\C#\Lab_01\bin\Debug\net9.0\Lab_01.pdb
+D:\Coding\C#\Lab_01\obj\Debug\net9.0\Lab_01.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\C#\Lab_01\obj\Debug\net9.0\Lab_01.AssemblyInfoInputs.cache
+D:\Coding\C#\Lab_01\obj\Debug\net9.0\Lab_01.AssemblyInfo.cs
+D:\Coding\C#\Lab_01\obj\Debug\net9.0\Lab_01.csproj.CoreCompileInputs.cache
+D:\Coding\C#\Lab_01\obj\Debug\net9.0\Lab_01.dll
+D:\Coding\C#\Lab_01\obj\Debug\net9.0\refint\Lab_01.dll
+D:\Coding\C#\Lab_01\obj\Debug\net9.0\Lab_01.pdb
+D:\Coding\C#\Lab_01\obj\Debug\net9.0\Lab_01.genruntimeconfig.cache
+D:\Coding\C#\Lab_01\obj\Debug\net9.0\ref\Lab_01.dll
+d:\Works\Parallel  programing (semestr  5)\lb1.1\bin\Debug\net9.0\Lab_01.exe
+D:\Works\Parallel  programing (semestr  5)\lb1.1\bin\Debug\net9.0\Lab_01.deps.json
+D:\Works\Parallel  programing (semestr  5)\lb1.1\bin\Debug\net9.0\Lab_01.runtimeconfig.json
+d:\Works\Parallel  programing (semestr  5)\lb1.1\bin\Debug\net9.0\Lab_01.dll
+d:\Works\Parallel  programing (semestr  5)\lb1.1\bin\Debug\net9.0\Lab_01.pdb
+d:\Works\Parallel  programing (semestr  5)\lb1.1\obj\Debug\net9.0\Lab_01.GeneratedMSBuildEditorConfig.editorconfig
+d:\Works\Parallel  programing (semestr  5)\lb1.1\obj\Debug\net9.0\Lab_01.AssemblyInfoInputs.cache
+d:\Works\Parallel  programing (semestr  5)\lb1.1\obj\Debug\net9.0\Lab_01.AssemblyInfo.cs
+d:\Works\Parallel  programing (semestr  5)\lb1.1\obj\Debug\net9.0\Lab_01.csproj.CoreCompileInputs.cache
+d:\Works\Parallel  programing (semestr  5)\lb1.1\obj\Debug\net9.0\Lab_01.dll
+d:\Works\Parallel  programing (semestr  5)\lb1.1\obj\Debug\net9.0\refint\Lab_01.dll
+d:\Works\Parallel  programing (semestr  5)\lb1.1\obj\Debug\net9.0\Lab_01.pdb
+D:\Works\Parallel  programing (semestr  5)\lb1.1\obj\Debug\net9.0\Lab_01.genruntimeconfig.cache
+D:\Works\Parallel  programing (semestr  5)\lb1.1\obj\Debug\net9.0\ref\Lab_01.dll
