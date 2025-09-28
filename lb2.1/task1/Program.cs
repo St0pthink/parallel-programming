@@ -11,90 +11,80 @@ class task2
     static int[] thrs = {1, 2, 4, 8, 12, 16, 20};
     static  DateTime time0;
     static TimeSpan time;
-    static void Exponentiation_(object o)
+    static int[,] Matrix_multiplication_type1(int[,] mat_a,int[,] mat_b, int n,int t)
     {
-        object[] info = (object[])o;
-        double[] a_array = (double[])info[2];
-        double[] b_array = (double[])info[3];
-        int left = (int)info[0];
-        int right = (int)info[1];
-        for (int i = left; i < right; i++)
-        {   
-            double sum = 0;
-            for (int j = 0; j < i + 1; j++)
-                sum += Math.Pow(a_array[j], 1.789);
-            if (i >= left)
+        int[,] mat_c = new int[n, n];
+
+        var options = new ParallelOptions
+        {
+            MaxDegreeOfParallelism = t 
+        };
+
+        Parallel.For(0, n, options, i =>
+        {
+            int summ = 0;
+            for (int j = 0; j < n; j++)
             {
-                b_array[i] = sum;
+                summ = 0;
+                for (int x = 0; x < n; x++)
+                {
+                    summ += mat_a[i, x] * mat_b[x, j];
+                }
+                mat_c[i, j] = summ;
             }
-        }
+        });
+        return mat_c;
     }
-    static int[,] Fill(int n)
+    static int[,] Matrix_multiplication_type2(int[,] mat_a,int[,] mat_b, int n,int t)
+    {
+        
+        int[,] mat_c = new int[n, n];
+
+        var options = new ParallelOptions
+        {
+            MaxDegreeOfParallelism = t 
+        };
+
+        Parallel.For(0, n, j =>
+        {
+            int summ = 0;
+            for (int i = 0; i < n; i++)
+            {
+                summ = 0;
+                for (int x = 0; x < n; x++)
+                {
+                    summ += mat_a[i, x] * mat_b[x, j];
+                }
+                mat_c[i, j] = summ;
+            }
+        });
+        return mat_c;
+    }
+    static int[,] Fill_rng(int n)
     {
         Random rng = new Random();
-        int[,] matrix = new int[n,n];
+        int[,] matrix = new int[n, n];
         for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < n; j++)
             {
-                matrix[i,j] = rng.Next(int.MinValue, int.MaxValue);
+                matrix[i, j] = rng.Next(int.MinValue, int.MaxValue);
             }
         }
         return matrix;
     }
-    static double[] parallels_type1(double[] array, int n, int thr)
+    static void PrintMatrix(int[,] matrix)
     {
-        double[] b_array = new double[n];
-        int step = n / thr;
-        Thread[] threads = new Thread[thr];
-        for (int i = 0; i < thr; i++)
+        int rows = matrix.GetLength(0);
+        int cols = matrix.GetLength(1); 
+        for (int i = 0; i < rows; i++)
         {
-            int left = i * step;
-            int right;
-            if (i == thr - 1)
+            for (int j = 0; j < cols; j++)
             {
-                right = n;
+                Console.Write(matrix[i, j] + "\t"); 
             }
-            else
-            {
-                right = (i + 1) * step;
-            }
-            threads[i] = new Thread(Exponentiation_);
-            threads[i].Start(new object[4] { left, right, array, b_array});
-            
+            Console.WriteLine(); 
         }
-
-        for (int i = 0; i < thr; i++)
-        {
-            threads[i].Join();
-        }
-        return b_array;
-    }
-    static double[] parallels_type2(double[] array, int n, int thr)
-    {
-        double[] b_array = new double[n];
-        Thread[] threads = new Thread[thr];
-        int right = 0;
-        int left = 0;
-        for (int i = 0; i < thr; i++)
-        {
-            double step = Math.Pow(2, i + 1);
-            right = left+(int)Math.Floor(n / step);
-            if (thr == 1 || i == thr - 1)
-            {
-                right = n;
-            }
-            threads[i] = new Thread(Exponentiation_);
-            threads[i].Start(new object[4] { left, right, array, b_array });
-            left = right;
-            
-        }
-
-        for (int i = 0; i < thr; i++)
-        {
-            threads[i].Join();
-        }
-        return b_array;
     }
     static void Main()
     {
@@ -103,10 +93,11 @@ class task2
             for (int j = 0; j < 7; j++)
             {
                 time0 = DateTime.Now;
-                ///parallels_type1(Fill(ns[i]), ns[i], thrs[j]);
-                parallels_type2(Fill(ns[i]), ns[i], thrs[j]);
+                int[,] matrix = Matrix_multiplication_type1(Fill_rng(ns[i]), Fill_rng(ns[i]), ns[i], thrs[j]);
+                //int[,] matrix = Matrix_multiplication_type2(Fill_rng(ns[i]), Fill_rng(ns[i]), ns[i], thrs[j]);
                 time = DateTime.Now - time0;
                 Console.WriteLine(time);
+                //PrintMatrix(matrix);
             }
             Console.WriteLine("/////////////////////////");
         }
