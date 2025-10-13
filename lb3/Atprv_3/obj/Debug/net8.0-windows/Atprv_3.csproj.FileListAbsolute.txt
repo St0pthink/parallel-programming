@@ -1,0 +1,41 @@
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\bin\Debug\net8.0-windows\Atprv_3.exe
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\bin\Debug\net8.0-windows\Atprv_3.deps.json
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\bin\Debug\net8.0-windows\Atprv_3.runtimeconfig.json
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\bin\Debug\net8.0-windows\Atprv_3.dll
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\bin\Debug\net8.0-windows\Atprv_3.pdb
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\obj\Debug\net8.0-windows\MainWindow.g.cs
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\obj\Debug\net8.0-windows\App.g.cs
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3_MarkupCompile.cache
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3_MarkupCompile.lref
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\obj\Debug\net8.0-windows\MainWindow.baml
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3.g.resources
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3.GeneratedMSBuildEditorConfig.editorconfig
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3.AssemblyInfoInputs.cache
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3.AssemblyInfo.cs
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3.csproj.CoreCompileInputs.cache
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3.dll
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\obj\Debug\net8.0-windows\refint\Atprv_3.dll
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3.pdb
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3.genruntimeconfig.cache
+D:\Labs\АТПРВ\Atprv_3\Atprv_3\obj\Debug\net8.0-windows\ref\Atprv_3.dll
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\bin\Debug\net8.0-windows\Atprv_3.exe
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\bin\Debug\net8.0-windows\Atprv_3.deps.json
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\bin\Debug\net8.0-windows\Atprv_3.runtimeconfig.json
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\bin\Debug\net8.0-windows\Atprv_3.dll
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\bin\Debug\net8.0-windows\Atprv_3.pdb
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\obj\Debug\net8.0-windows\App.g.cs
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3_MarkupCompile.cache
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3_MarkupCompile.lref
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\obj\Debug\net8.0-windows\MainWindow.baml
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3.g.resources
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3.GeneratedMSBuildEditorConfig.editorconfig
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3.AssemblyInfoInputs.cache
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3.AssemblyInfo.cs
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3.csproj.CoreCompileInputs.cache
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3.sourcelink.json
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3.dll
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\obj\Debug\net8.0-windows\refint\Atprv_3.dll
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3.pdb
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\obj\Debug\net8.0-windows\Atprv_3.genruntimeconfig.cache
+C:\D\Code\Parrallel programing (5 sem)\lb3\Atprv_3\obj\Debug\net8.0-windows\ref\Atprv_3.dll
