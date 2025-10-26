@@ -6,10 +6,12 @@ class task2
 {
     private static volatile string? Buff;
     static void Main()
-    { 
-        int n = 5;
-        string input = Console.ReadLine()!;
-        string[] text = input.Split(';', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+    {
+        Console.WriteLine("Введите количество потребителей (int):");
+        int n = Convert.ToInt32(Console.ReadLine());;
+        Console.WriteLine("Введите список сообщений(разделитель ;):");
+        string input_text = Console.ReadLine()!;
+        string[] text = input_text.Split(';', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
         int len = text.Length;     
         var show = new Semaphore[n];
 

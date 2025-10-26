@@ -4,63 +4,76 @@ using System.Threading;
 using Microsoft.VisualBasic;
 class task2
 {
-    private static volatile string? Buff;
+    private static volatile bool asked = true;
     static void Main()
-    { 
-        int n = 5;
-        string input = Console.ReadLine()!;
-        string[] text = input.Split(';', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
-        int len = text.Length;     
-        var show = new Semaphore[n];
+    {     
+        Console.WriteLine("Введите количество птенцов (int):");
+        int n = Convert.ToInt32(Console.ReadLine());
 
-        for (int i = 0; i < n; i++)
-        {
-            show[i] = new Semaphore(0,1);
-        }
+        Console.WriteLine("Введите количество еды, которое приносит мать (int):");
+        int F = Convert.ToInt32(Console.ReadLine());
 
-        var confirm = new Semaphore(0, n);
+        var food = new SemaphoreSlim(F, int.MaxValue);
+
+        var bring = new AutoResetEvent(false);
+
+        int need_food = 0;
+
+        int done = 0;
+
+        var sons = new List<Thread>();
         
-        var consumers = new List<Thread>();
+        var consoleLock = new object();       
 
-        Thread developer = new(Give) { Name = "Производитель" };
-        developer.Start();
+        Thread mother = new(Hunt) { Name = "Мать птица" };
+        mother.Start();
         for (int i = 0; i < n; i++)
         {
-            var consumer = new Thread(Take) { Name = $"Потребитель {i + 1}" };
-            consumer.Start(i);
-            consumers.Add(consumer);
+            var son = new Thread(Eat) { Name = $"Птенец {i + 1}" };
+            son.Start();
+            sons.Add(son);
         }
+        void Log(string s) { lock (consoleLock) Console.WriteLine(s); }
 
-
-        developer.Join();            
-        foreach (var t in consumers) 
+        mother.Join();            
+        foreach (var t in sons) 
             t.Join();
-        Console.WriteLine("Готово");
+        Log("Готово");
 
-        void Give(){
-            for (int i  = 0; i < len; i++)
+        void Hunt(){
+            while (true)
             {
-                Buff = text[i];
-                for (int j = 0; j < n; j++)
-                {
-                    show[j].Release();
-                }
-                 Console.WriteLine($"{Thread.CurrentThread.Name} передал сообщение: {Buff}");
-                for (int j = 0; j < n; j++)
-                {
-                    confirm.WaitOne();
-                }
+                bring.WaitOne();
+                if (Volatile.Read(ref done) == n)
+                break;
+                food.Release(F);
+                Interlocked.Exchange(ref need_food, 0);
+                Log($"{Thread.CurrentThread.Name} принесла еды; Количество еды: {food.CurrentCount}");           
             }
         }
-        void Take(object? state)
+        void Eat()
         {
-            int num = (int)state!;
-            for (int y = 0; y < len; y++)
+            Random rng = new Random();
+            int k = rng.Next(5, 15);
+            for (int i = 0; i < k; i++)
             {
-                show[num].WaitOne();
-                Console.WriteLine($"{Thread.CurrentThread.Name} получило сообщение: {Buff}");
-                confirm.Release();
+                food.Wait();
+                Log($"{Thread.CurrentThread.Name} поел; Количество еды: {food.CurrentCount}");
+                Thread.Sleep(1000);
+                Log($"{Thread.CurrentThread.Name} спит;");
+                if (food.CurrentCount == 0 && Interlocked.Exchange(ref need_food, 1) == 0)
+                {
+                    Log($"{Thread.CurrentThread.Name} просит еды; Количество еды: {food.CurrentCount}");
+                    asked = false;
+                    bring.Set();
+                }
             }
+            Log($"{Thread.CurrentThread.Name} вырос!");
+            if ( Interlocked.Increment(ref done) == n)
+            {
+            bring.Set();
+            }
+
         }
     }
 }
