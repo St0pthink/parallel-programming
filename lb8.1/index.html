@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body{font-family:Arial,sans-serif;max-width:700px;margin:20px auto}
+        .b{border:1px solid #aaa;padding:8px;margin:8px 0}
+        .t{font-weight:bold;margin-bottom:4px}
+        #s{font-style:italic;margin-bottom:10px}
+    </style>
+</head>
+<body>
+<p id="s">Ждём данные от сервера...</p>
+
+<div class="b">
+    <div class="t">Факт про кота</div>
+    <div id="cat">нет данных</div>
+</div>
+
+<div class="b">
+    <div class="t">Шутка</div>
+    <div id="joke">нет данных</div>
+</div>
+
+<div class="b">
+    <div class="t">Случайная цитата</div>
+    <div id="quote">нет данных</div>
+</div>
+
+<script>
+(function(){
+    var s=document.getElementById('s'),
+        c=document.getElementById('cat'),
+        j=document.getElementById('joke'),
+        u=document.getElementById('quote');
+
+    function upd(){
+        s.textContent='Обновляем...';
+        fetch('/api/data?t='+Date.now())
+            .then(r=>r.json())
+            .then(d=>{
+                c.textContent=d.cat||'нет кота';
+                j.textContent=d.joke||'нет шутки';
+                u.textContent=d.qoute||'нет цитаты';
+                s.textContent='Обновлено: '+(d.time||'??:??:??');
+            })
+            .catch(e=>{
+                console.log(e);
+                s.textContent='Ошибка загрузки';
+            });
+    }
+    upd();
+    setInterval(upd,10000);})();
+</script>
+</body>
+</html>
